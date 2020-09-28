@@ -14,6 +14,13 @@ def task1(distance):
     return i
 
 
+# Test
+expected = 14
+actual = task1(10000)
+assert expected == actual
+# End test
+
+
 # Демо
 for i in range(5):
     distance = 10 ** i
@@ -54,6 +61,13 @@ def isPrime(number):
             return False
         i += 1
     return True
+
+
+# Test
+expected = 68
+actual = task2(10000)
+assert expected == actual
+# End test
 
 
 # Демо
