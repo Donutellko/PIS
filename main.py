@@ -49,6 +49,7 @@
 #     print(word + " " + str(i))
 
 
-a = "пархоменко"
-b = [c.upper() + "_" for c in a]
-print("".join(b))
+# a = "пархоменко"
+# b = [c.upper() + "_" for c in a]
+# print("".join(b))
+
