@@ -71,9 +71,7 @@ l = []
 for i in range(3, 23, 2):
     l.append(i)
 
-# здесь ваш код
-new_l = []
-
+new_l = [i for i in range(3, 23, 2)]
 
 print(new_l)
 print(l)
@@ -92,8 +90,7 @@ l = []
 for i in range(12):
     l.append(2**i + 1)
 
-# здесь ваш код
-new_l = []
+new_l = [2**i + 1 for i in range(12)]
 
 
 print(new_l)
@@ -114,8 +111,7 @@ l = []
 for i in old_l:
     l.append(i-16)
 
-# здесь ваш код
-new_l = []
+new_l = [i - 16 for i in old_l]
 
 
 print(new_l)
@@ -136,8 +132,7 @@ l = []
 for i in old_l:
     l.append(13)
 
-# здесь ваш код
-new_l = []
+new_l = [13 for i in old_l]
 
 
 print(new_l)
@@ -161,8 +156,7 @@ print(new_l == l)
 состоящих из 2оей"""
 print("Результат задания 5")
 
-# здесь ваш код
-l = []
+l = [2 for i in range(5)]
 
 print(l)
 
@@ -178,8 +172,7 @@ print(l)
 [5,10,15,20,25,30]"""
 print("Результат задания 5")
 
-# здесь ваш код
-l = []
+l = [i for i in range(5, 31, 5)]
 
 print(l)
 
@@ -194,7 +187,7 @@ print(l)
 print("Результат задания 6")
 
 # здесь ваш код
-l = []
+l = [2 ** i for i in range(5)]
 
 print(l)
 
