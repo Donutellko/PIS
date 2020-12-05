@@ -1,0 +1,25 @@
+# https://w.wiki/pNp
+
+# Шергалис Донат
+# Вариант 31
+# Movie 24 It's a Wonderful Life
+# образовательные учреждения, в которых учился сценарист, на карте.
+
+# https://www.wikidata.org/wiki/Q204191 = It's a Wonderful Life
+# https://www.wikidata.org/wiki/Property:P58 = screenwriter
+
+# https://www.wikidata.org/wiki/Q508285 = Frances Goodrich (один из сценаристов)
+# https://www.wikidata.org/wiki/Property:P69 = educated at
+
+# https://www.wikidata.org/wiki/Q49088 = Columbia University (одно из мест обучения Frances Goodrich)
+# https://www.wikidata.org/wiki/Property:P625 = coordinate location
+
+#defaultView:Map
+SELECT ?screenwriterLabel $screenwriterEducationLabel $screenwriterEducationLocation
+WHERE {
+  wd:Q204191 wdt:P58 ?screenwriter.
+  ?screenwriter wdt:P69 ?screenwriterEducation.
+  ?screenwriterEducation wdt:P625 ?screenwriterEducationLocation.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
+}
