@@ -3,6 +3,38 @@
 # Movie 24 It's a Wonderful Life
 # образовательные учреждения, в которых учился сценарист, на карте.
 
+# эта версия имеет время выполнения около 45 секунд за счёт поиска фильма по имени
+# версия без поиска по имени: https://w.wiki/pNp
+
+#defaultView:Map
+SELECT ?screenwriterLabel $screenwriterEducationLabel $screenwriterEducationLocation
+WHERE {
+  {
+    SELECT DISTINCT ?film
+    WHERE {
+        # film является частным случаем понятия фильм (куча таких)
+        ?film wdt:P31 wd:Q11424.
+
+        # фильм называется title (куча таких)
+        ?film wdt:P1476 ?title.
+
+        FILTER (str(?title) = "It's a Wonderful Life") # (немного таких)
+    }
+  }
+  # film имеет сценариста screenwriter (мб несколько)
+  ?film wdt:P58 ?screenwriter.
+
+  # сценарист имеет место обучения screenwriterEducation (мб несколько)
+  ?screenwriter wdt:P69 ?screenwriterEducation.
+
+  # screenwriterEducation имеет координаты screenwriterEducationLocation
+  ?screenwriterEducation wdt:P625 ?screenwriterEducationLocation.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
+}
+
+
+
 # https://www.wikidata.org/wiki/Q204191 = It's a Wonderful Life
 # https://www.wikidata.org/wiki/Property:P58 = screenwriter
 
@@ -15,21 +47,3 @@
 # https://www.wikidata.org/wiki/Q11424 = фильм
 # https://www.wikidata.org/wiki/Property:P31 = частный случай понятия
 # https://www.wikidata.org/wiki/Property:P1476 = название
-
-#defaultView:Map
-SELECT ?screenwriterLabel $screenwriterEducationLabel $screenwriterEducationLocation
-WHERE {
-  {
-    SELECT DISTINCT ?film
-    WHERE {
-        ?film wdt:P31 wd:Q11424. # является фильмом
-        ?film wdt:P1476 ?title.
-        FILTER (str(?title) = "It's a Wonderful Life")
-    }
-  }
-  ?film wdt:P58 ?screenwriter.
-  ?screenwriter wdt:P69 ?screenwriterEducation.
-  ?screenwriterEducation wdt:P625 ?screenwriterEducationLocation.
-
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
-}
