@@ -1,0 +1,17 @@
+0.937 = rmse для алгоритма SVD с метрикой None
+0.953 = rmse для алгоритма KNNWithMeans с метрикой msd
+0.954 = rmse для алгоритма KNNWithMeans с метрикой pearson
+0.959 = rmse для алгоритма KNNWithMeans с метрикой cosine
+1.516 = rmse для алгоритма NormalPredictor с метрикой None
+
+Лучший алгоритм по rmse: SVD с метрикой None
+
+precision@k: 0.864
+recall@k:    0.433
+
+User 31
+    89    Blade Runner (1982)        01-Jan-1982 4.901
+    127   Godfather, The (1972)      01-Jan-1972 4.812
+    603   Rear Window (1954)         01-Jan-1954 4.785
+    169   Wrong Trousers, The (1993) 01-Jan-1993 4.733
+    318   Schindler's List (1993)    01-Jan-1993 4.726
